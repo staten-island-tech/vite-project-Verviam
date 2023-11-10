@@ -15,8 +15,12 @@
 // users to change theme
 
 
-// install vite
+// download node
+// get npm
+// npm init vite@latest
 // npm i (install in project folder and cd to project folder)
+// make css and js folder
+// in main.js do "../css/style.css"
 // <script type ="module" src="main.js"></script>
 // npm run dev
 
@@ -36,3 +40,11 @@
 // h1 {
 //  font-size: var(--h1)
 // }
+
+// export {variable1, variable2}
+// import {variable1, variable2} from "./arrayOfItems"
+// import {idk} from "./Dom"
+
+// images go in public folder
+
+// npm run build --> send to dist file
