@@ -1,0 +1,3 @@
+array = []
+
+export {array};

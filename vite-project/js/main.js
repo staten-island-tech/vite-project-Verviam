@@ -1,7 +1,7 @@
 import '../styles/style.css'
 import javascriptLogo from './javascript.svg'
 import viteLogo from 'public/vite.svg'
-import { setupCounter } from './counter.js'
+import { array } from './array.js'
 
 document.querySelector('#app').innerHTML = `
   <div>
@@ -37,16 +37,14 @@ setupCounter(document.querySelector('#counter'))
 // users to change theme
 
 
-// download node
 // get npm
 // npm init vite@latest
-// npm i (install in project folder and cd to project folder)
+// npm i (install in project folder and cd to project folder) every new os
 // make css and js folder
 // in main.js do "../css/style.css"
 // <script type ="module" src="main.js"></script>
 // npm run dev
 
-// import './styles.css/ in js file
 
 // naming variables with css
 // :root {
@@ -63,7 +61,7 @@ setupCounter(document.querySelector('#counter'))
 //  font-size: var(--h1)
 // }
 
-// export {variable1, variable2}
+// export {variable1, variable2} // variable can be array of items
 // import {variable1, variable2} from "./arrayOfItems"
 // import {idk} from "./Dom"
 
