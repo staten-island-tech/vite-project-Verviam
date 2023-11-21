@@ -2,6 +2,13 @@ import '../styles/style.css'
 import { workouts } from './workouts'
 import { DOMSelectors } from './dom'
 
+function createCards(workout){
+    DOMSelectors.cards.insertAdjacentHTML("beforeend", 
+    `<div class="card-head">hi</div>
+    <div class="card-img"></div>
+    <div class="card-p"></div>`)
+    }
+workouts.forEach((workout)=>createCards(workout));
 
 
 
