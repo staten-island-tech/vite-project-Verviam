@@ -1,16 +1,16 @@
 import '../styles/style.css'
-import { workouts } from './workouts'
-import { DOMSelectors } from './dom'
+import { workouts } from './workouts.js'
+import { DOMSelectors } from './dom.js'
 
-function createCards(workout){
-    DOMSelectors.cards.insertAdjacentHTML("beforeend", 
-    `<div class="card-head">hi</div>
-    <div class="card-img"></div>
-    <div class="card-p"></div>`)
-    }
-workouts.forEach((workout)=>createCards(workout));
+function createCards(){
+    workouts.forEach((workout) => DOMSelectors.cards.insertAdjacentHTML("afterend", 
+    `<div class="card-head">${workout.name}</div>
+    <div class="card-img">${workout.image}</div>
+    <div class="card-p">Difficulty: ${workout.difficulty}, Equipment: ${workout.equipment}, Muscle Groups worked: ${workout.muscleGroup}</div>`)
+    )
+}
 
-
+createCards()
 
 
 // Using ViteJS, you will scaffold a single page project that will act as a store
