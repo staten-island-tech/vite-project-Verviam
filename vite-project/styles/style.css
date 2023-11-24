@@ -1,24 +1,56 @@
 @import url(variables.css);
 
-:root {
-  --dark-blue: #135cc5;
-  --primary: var(var(--dark-blue));
-  --h1: 7.594rem;
-
-}
 
 html, *, body{
   margin: 0 auto;
+  padding: 0 auto;
   font-family: 'Poppins', sans-serif;
-
+  box-sizing: border-box;
+  font-size: 62.5%;
+  color: var(--primary);
+  background-color: var(--primary); /* change later*/
 }
 
-.cards {
-  margin: 1em;
+.heading {
+  font-size: 5rem;
+  text-align: center;
+  margin: 2rem;
 }
+
 /* .overview{
 
 }
 .selection-buttons{
   
 } */
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.card {
+  margin: 2rem;
+  padding: 1rem;
+  width: 21%;
+  height: 65vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  outline: 0.2rem solid brown;
+}
+
+.card-head{
+  font-size: 3rem;
+
+}
+
+.card-img{
+  border-radius: 10px;
+}
+.card-p {
+  font-size: 2rem;
+}
+
+

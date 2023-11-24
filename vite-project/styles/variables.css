@@ -1,3 +1,6 @@
-body {
-    background-color: red;
-}
+:root {
+    --dark-blue: #135cc5;
+    --primary: var(var(--dark-blue));
+    --h1: 7.594rem;
+  
+  }

@@ -3,12 +3,14 @@ import { workouts } from './workouts.js'
 import { DOMSelectors } from './dom.js'
 
 function createCards(){
-    workouts.forEach((workout) => DOMSelectors.cards.insertAdjacentHTML("afterend", 
-    `<div class="card-head">${workout.name}</div>
+    workouts.forEach((workout) => DOMSelectors.cards.insertAdjacentHTML("beforeend", 
+    `<div class="card">
+    <div class="card-head">${workout.name}</div>
     <div class="card-img">${workout.image}</div>
-    <div class="card-p">Difficulty: ${workout.difficulty}, Equipment: ${workout.equipment}, Muscle Groups worked: ${workout.muscleGroup}</div>`)
+    <div class="card-p">Difficulty: ${workout.difficulty} <br> Equipment: ${workout.equipment} <br> Muscle Groups worked: ${workout.muscleGroup}</div>
+    </div>`)
     )
-}
+} // find out how to add a space between comma in workout.muscleGroup
 
 createCards()
 
