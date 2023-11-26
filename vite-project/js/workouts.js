@@ -11,21 +11,21 @@ const workouts = [
     image: "pushups_image.jpg",
     equipment: "bodyweight",
     muscleGroup: ["chest", "triceps"],
-    difficulty: "moderate",
+    difficulty: "easy",
   },
   {
     name: "Bicep Curls",
     image: "bicep_curls_image.jpg",
     equipment: "dumbbell",
     muscleGroup: ["biceps"],
-    difficulty: "moderate",
+    difficulty: "easy",
   },
   {
     name: "Tricep Extensions",
     image: "tricep_extensions_image.jpg",
     equipment: "dumbbell",
     muscleGroup: ["triceps"],
-    difficulty: "moderate",
+    difficulty: "easy",
   },
   {
     name: "Dumbbell Rows",
@@ -49,27 +49,6 @@ const workouts = [
     difficulty: "moderate",
   },
   {
-    name: "Renegade Rows",
-    image: "renegade_rows_image.jpg",
-    equipment: "dumbbell",
-    muscleGroup: ["core", "back"],
-    difficulty: "difficult",
-  },
-  {
-    name: "Dumbbell Deadlifts",
-    image: "dumbbell_deadlifts_image.jpg",
-    equipment: "dumbbell",
-    muscleGroup: ["back", "hamstrings"],
-    difficulty: "moderate",
-  },
-  {
-    name: "Dumbbell Front Raises",
-    image: "dumbbell_front_raises_image.jpg",
-    equipment: "dumbbell",
-    muscleGroup: ["shoulder"],
-    difficulty: "moderate",
-  },
-  {
     name: "Dumbbell Lateral Raises",
     image: "dumbbell_lateral_raises_image.jpg",
     equipment: "dumbbell",
@@ -84,13 +63,6 @@ const workouts = [
     difficulty: "easy",
   },
   {
-    name: "Plank",
-    image: "plank_image.jpg",
-    equipment: "bodyweight",
-    muscleGroup: ["core"],
-    difficulty: "easy",
-  },
-  {
     name: "Lunges",
     image: "lunges_image.jpg",
     equipment: "bodyweight",
@@ -98,11 +70,18 @@ const workouts = [
     difficulty: "moderate",
   },
   {
+    name: "Wall-Sits",
+    image: "wallsits_image.jpg",
+    equipment: "bodyweight",
+    muscleGroup: ["legs", "glutes"],
+    difficulty: "moderate"
+  },
+  {
     name: "Pull-ups",
     image: "pullups_image.jpg",
     equipment: "bodyweight",
     muscleGroup: ["back", "biceps"],
-    difficulty: "difficult",
+    difficulty: "moderate",
   },
   {
     name: "Dips",
@@ -110,13 +89,6 @@ const workouts = [
     equipment: "bodyweight",
     muscleGroup: ["triceps", "chest"],
     difficulty: "moderate",
-  },
-  {
-    name: "Burpees",
-    image: "burpees_image.jpg",
-    equipment: "bodyweight",
-    muscleGroup: ["full body"],
-    difficulty: "difficult",
   },
   {
     name: "Mountain Climbers",
@@ -133,13 +105,14 @@ const workouts = [
     difficulty: "moderate",
   },
   {
-    name: "Jumping Jacks",
-    image: "jumping_jacks_image.jpg",
+    name: "Pistol Squats",
+    image: "pistol_squats_image.jpg",
     equipment: "bodyweight",
-    muscleGroup: ["cardio"],
-    difficulty: "easy",
+    muscleGroup: ["legs"],
+    difficulty: "hard",
   },
-  
 ];
 
 export { workouts };
+
+// rerank difficulty of workouts and get difficult ones

@@ -6,7 +6,7 @@ function createCards(){
     workouts.forEach((workout) => DOMSelectors.cards.insertAdjacentHTML("beforeend", 
     `<div class="card">
     <div class="card-head">${workout.name}</div>
-    <div class="card-img">${workout.image}</div>
+    <img src = ${workout.image} class = "card-img"/>
     <div class="card-p">Difficulty: ${workout.difficulty} <br> Equipment: ${workout.equipment} <br> Muscle Groups worked: ${workout.muscleGroup}</div>
     </div>`)
     )

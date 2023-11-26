@@ -17,12 +17,15 @@ html, *, body{
   margin: 2rem;
 }
 
-/* .overview{
 
-}
 .selection-buttons{
-  
-} */
+  display: flex;
+  font-size: 3rem;
+} 
+.workouts-buttons{
+  display: flex;
+  font-size: 3rem;
+}
 
 .cards {
   display: flex;
@@ -47,7 +50,11 @@ html, *, body{
 }
 
 .card-img{
+  display: flex;
+  width: 30vh;
+  height: auto;
   border-radius: 10px;
+  
 }
 .card-p {
   font-size: 2rem;
