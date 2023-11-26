@@ -7,8 +7,8 @@ html, *, body{
   font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
   font-size: 62.5%;
-  color: var(--primary);
-  background-color: var(--primary); /* change later*/
+  background-color: var(--primary);
+  color: var(--secondary);
 }
 
 .heading {
@@ -17,20 +17,24 @@ html, *, body{
   margin: 2rem;
 }
 
-
+/* weird*/
 .selection-buttons{
   display: flex;
   font-size: 3rem;
+  justify-content: center;
 } 
 .workouts-buttons{
   display: flex;
   font-size: 3rem;
+  justify-content: center;
 }
 
 .cards {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  justify-content: space-evenly;
+  margin: 2em;
 }
 
 .card {

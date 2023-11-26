@@ -1,6 +1,21 @@
 :root {
-    --dark-blue: #135cc5;
-    --primary: var(var(--dark-blue));
-    --h1: 7.594rem;
-  
-  }
+  --dark-blue: #021691;
+  --blue: #0000FF;
+  --light-blue: #87CEEB;
+  --h1: 7.594rem;
+  --primary: var(--light-blue);
+  --secondary: var(--dark-blue);
+}
+
+.light{
+  --primary: var(--light-blue);
+  --secondary: var(--dark-blue);
+}
+.dark{
+  --primary: var(--blue);
+  --secondary: var(--light-blue)
+}
+
+/* change what gets primary or secondary and change light and cool colors */
+/* https://www.rapidtables.com/web/css/css-color.html
+dark and light blue */

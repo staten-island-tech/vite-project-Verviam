@@ -14,6 +14,11 @@ function createCards(){
 
 createCards()
 
+function changeTheme() {
+    
+    //click on change theme button
+}
+
 
 // Using ViteJS, you will scaffold a single page project that will act as a store
 // front for a business. The site will render cards for products using forEach()
@@ -34,21 +39,3 @@ createCards()
 // npm run dev
 // npm run build --> send to dist file before uploading
 
-
-// naming variables with css
-// :root {
-//    --dark-blue: #135cc5;
-//    --primary: var(var(--dark-blue))
-
-//    --h1: 7.594rem;
-//    }
-// body {
-//   background-color: var(--primary);
-//  }
-
-// h1 {
-//  font-size: var(--h1)
-// }
-
-
-// images go in public folder
