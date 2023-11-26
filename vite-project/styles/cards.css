@@ -1,0 +1,37 @@
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 2em;
+  }
+  
+  .card {
+    margin: 2rem;
+    padding: 1rem;
+    width: 21%;
+    height: 65vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    outline: 0.2rem solid brown;
+  }
+  
+  .card-head{
+    font-size: 3rem;
+  
+  }
+  
+  .card-img{
+    display: flex;
+    width: 30vh;
+    height: auto;
+    border-radius: 10px;
+    
+  }
+  .card-p {
+    font-size: 2rem;
+  }
+  
+  
+  

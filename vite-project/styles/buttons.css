@@ -1,0 +1,12 @@
+/* weird*/
+.selection-buttons{
+    display: flex;
+    font-size: 3rem;
+    justify-content: center;
+  } 
+  .workouts-buttons{
+    display: flex;
+    font-size: 3rem;
+    justify-content: center;
+  }
+  
