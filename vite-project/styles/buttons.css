@@ -1,12 +1,65 @@
-/* weird*/
 .selection-buttons{
-    display: flex;
-    font-size: 3rem;
-    justify-content: center;
-  } 
-  .workouts-buttons{
-    display: flex;
-    font-size: 3rem;
-    justify-content: center;
-  }
-  
+  display: flex;
+  flex-direction: space-between;
+  padding: 1em;
+}
+
+.theme-button{
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0.5em;
+}
+
+.workouts-button{
+  display: flex;
+  justify-content: center;
+  padding: 0.5em;
+
+}
+
+.difficulty-filter{
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5em;
+}
+
+.sort-button{
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.button-label{
+  font-size: 2rem;
+  margin: 0.5em;
+}
+
+/* Animations */
+#Everything:hover {
+  transform: scale(1.5);
+}
+
+#Dumbbells:hover{
+  transform: scale(1.5);
+}
+
+#BodyWeight:hover{
+  transform: scale(1.5);
+}
+
+#changeTheme:hover{
+  transform: scale(1.5);
+}
+
+#easy-difficulty:hover{
+  transform: scale(1.5);
+}
+
+#moderate-difficulty:hover{
+  transform: scale(1.5);
+}
+
+#hard-difficulty:hover{
+  transform: scale(1.5);
+}

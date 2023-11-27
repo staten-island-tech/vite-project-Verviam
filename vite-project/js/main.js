@@ -1,27 +1,156 @@
 import '../styles/style.css'
 import { workouts } from './workouts.js'
 import { DOMSelectors } from './dom.js'
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init(); // npm install aos --save
 
 function createCards(){
     workouts.forEach((workout) => DOMSelectors.cards.insertAdjacentHTML("beforeend", 
-    `<div class="card">
-    <div class="card-head">${workout.name}</div>
+    `<div class="card" data-aos="fade-right">
+    <div class="card-head" data-aos="flip-up">${workout.name}</div>
     <img src = ${workout.image} class = "card-img"/>
-    <div class="card-p">Difficulty: ${workout.difficulty} <br> Equipment: ${workout.equipment} <br> Muscle Groups worked: ${workout.muscleGroup}</div>
-    </div>`)
-    )
-} // find out how to add a space between comma in workout.muscleGroup
+    <div class="card-p" data-aos="flip-up">Difficulty: ${workout.difficulty} <br> Equipment: ${workout.equipment} <br> Muscle Groups Worked: ${workout.muscleGroup}</div>
+    </div>`))
+}  
+
+// find out how to add a space between comma in workout.muscleGroup and change to capital letters
 
 createCards()
 
-function changeTheme() {
+DOMSelectors.themeButton.addEventListener("click", function() {
+    if (document.body.classList.contains("light")) {
+        document.body.classList.replace("light", "dark");
+    }
+    else if (document.body.classList.contains("dark")) {
+        document.body.classList.replace("dark", "light");
+    }
+})
+
+
+function filteredDumbbells(){
+    const dumbbellWorkouts = workouts
+    .filter((workout => workout.equipment.includes("dumbbell")))
+    .map(workout => ({ //maps into new array
+        name: workout.name,
+        image: workout.image,
+        difficulty: workout.difficulty,
+        equipment: workout.equipment,
+        muscleGroup: workout.muscleGroup
+    }));
+
+    dumbbellWorkouts.forEach((workout) => DOMSelectors.cards.insertAdjacentHTML("beforeend", 
+    `<div class="card" data-aos="fade-right">
+    <div class="card-head" data-aos="flip-up">${workout.name}</div>
+    <img src = ${workout.image} class = "card-img"/>
+    <div class="card-p" data-aos="flip-up">Difficulty: ${workout.difficulty} <br> Equipment: ${workout.equipment} <br> Muscle Groups Worked: ${workout.muscleGroup}</div>
+    </div>`))
     
-    //click on change theme button
 }
 
+function filteredBodyweight(){
+    const bodyweightWorkouts = workouts.filter((workout => workout.equipment.includes("bodyweight")))
+    .map(workout => ({
+        name: workout.name,
+        image: workout.image,
+        difficulty: workout.difficulty,
+        equipment: workout.equipment,
+        muscleGroup: workout.muscleGroup
+    }));
 
-// -Use both map and filter to create new arrays to iterate through
-// -Create two separate themes using CSS Custom Properties and allow
+    bodyweightWorkouts.forEach((workout) => DOMSelectors.cards.insertAdjacentHTML("beforeend", 
+    `<div class="card" data-aos="fade-right">
+    <div class="card-head" data-aos="flip-up">${workout.name}</div>
+    <img src = ${workout.image} class = "card-img"/>
+    <div class="card-p" data-aos="flip-up">Difficulty: ${workout.difficulty} <br> Equipment: ${workout.equipment} <br> Muscle Groups Worked: ${workout.muscleGroup}</div>
+    </div>`))
+}
+
+function filteredEasy (){
+    const easyWorkouts = workouts.filter((workout => workout.difficulty.includes("easy")))
+    .map(workout => ({
+        name: workout.name,
+        image: workout.image,
+        difficulty: workout.difficulty,
+        equipment: workout.equipment,
+        muscleGroup: workout.muscleGroup
+    }));
+
+    easyWorkouts.forEach((workout) => DOMSelectors.cards.insertAdjacentHTML("beforeend", 
+    `<div class="card" data-aos="fade-right">
+    <div class="card-head" data-aos="flip-up">${workout.name}</div>
+    <img src = ${workout.image} class = "card-img"/>
+    <div class="card-p" data-aos="flip-up">Difficulty: ${workout.difficulty} <br> Equipment: ${workout.equipment} <br> Muscle Groups Worked: ${workout.muscleGroup}</div>
+    </div>`))
+}
+
+function filteredHard (){
+    const hardWorkouts = workouts.filter((workout => workout.difficulty.includes("hard")))
+    .map(workout => ({
+        name: workout.name,
+        image: workout.image,
+        difficulty: workout.difficulty,
+        equipment: workout.equipment,
+        muscleGroup: workout.muscleGroup
+    }));
+
+    hardWorkouts.forEach((workout) => DOMSelectors.cards.insertAdjacentHTML("beforeend", 
+    `<div class="card" data-aos="fade-right">
+    <div class="card-head" data-aos="flip-up">${workout.name}</div>
+    <img src = ${workout.image} class = "card-img"/>
+    <div class="card-p" data-aos="flip-up">Difficulty: ${workout.difficulty} <br> Equipment: ${workout.equipment} <br> Muscle Groups Worked: ${workout.muscleGroup}</div>
+    </div>`))
+}
+
+function filteredModerate (){
+    const moderateWorkouts = workouts.filter((workout => workout.difficulty.includes("moderate")))
+    .map(workout => ({
+        name: workout.name,
+        image: workout.image,
+        difficulty: workout.difficulty,
+        equipment: workout.equipment,
+        muscleGroup: workout.muscleGroup
+    }));
+
+    moderateWorkouts.forEach((workout) => DOMSelectors.cards.insertAdjacentHTML("beforeend", 
+    `<div class="card" data-aos="fade-right">
+    <div class="card-head" data-aos="flip-up">${workout.name}</div>
+    <img src = ${workout.image} class = "card-img"/>
+    <div class="card-p" data-aos="flip-up">Difficulty: ${workout.difficulty} <br> Equipment: ${workout.equipment} <br> Muscle Groups Worked: ${workout.muscleGroup}</div>
+    </div>`))
+}
+
+DOMSelectors.everything.addEventListener("click", function() {
+    DOMSelectors.cards.innerHTML = '';
+    createCards();
+})
+
+DOMSelectors.dumbbells.addEventListener("click", function() {
+    DOMSelectors.cards.innerHTML = '';
+    filteredDumbbells();
+})
+
+DOMSelectors.bodyweight.addEventListener("click", function() {
+    DOMSelectors.cards.innerHTML = '';
+    filteredBodyweight();
+})
+
+DOMSelectors.easyDifficulty.addEventListener("click", function(){
+    DOMSelectors.cards.innerHTML = '';
+    filteredEasy();
+})
+
+DOMSelectors.moderateDifficulty.addEventListener("click", function(){
+    DOMSelectors.cards.innerHTML = '';
+    filteredModerate();
+})
+
+DOMSelectors.hardDifficulty.addEventListener("click", function(){
+    DOMSelectors.cards.innerHTML = '';
+    filteredHard();
+})
+
 
 // npm init vite@latest
 // npm i (install in project folder and cd to project folder) every new os

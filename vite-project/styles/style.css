@@ -16,6 +16,32 @@ html, *, body{
 .heading {
   font-size: 5rem;
   text-align: center;
-  margin: 2rem;
+  margin: 0.5em;
+}
+
+/* viewing stuff, change selection-button wrapping if have time */
+
+@media screen and (max-width: 1080px) {
+  .card {
+    width: 25%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .card {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .card {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .card {
+    width: 100%;
+  }
 }
 

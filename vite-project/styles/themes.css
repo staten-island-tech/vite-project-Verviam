@@ -9,13 +9,11 @@
 
 .light{
   --primary: var(--light-blue);
-  --secondary: var(--dark-blue);
+  --secondary: var(--blue);
 }
 .dark{
-  --primary: var(--blue);
+  --primary: var(--dark-blue);
   --secondary: var(--light-blue)
 }
 
-/* change what gets primary or secondary and change light and cool colors */
-/* https://www.rapidtables.com/web/css/css-color.html
-dark and light blue */
+/* Typography: https://typescale.com/ */
