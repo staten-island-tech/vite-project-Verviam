@@ -28,6 +28,37 @@ DOMSelectors.themeButton.addEventListener("click", function() {
     }
 })
 
+let equipmentButtons = DOMSelectors.equipmentButtons;
+equipmentButtons.forEach((button) => button.addEventListener("click", 
+function() {
+    let chooseFilter = button.textContent
+    const filteredEquipment =
+    workouts.filter((workout) => workout.equipment.includes(chooseFilter)
+        
+        .map(workout => ({ //maps into new array
+        name: workout.name,
+        image: workout.image,
+        difficulty: workout.difficulty,
+        equipment: workout.equipment,
+        muscleGroup: workout.muscleGroup
+    }));=> {
+        
+    }))
+}
+
+));
+let difficultyButtons = DOMSelectors.difficultyButtons
+buttons.forEach((button) => button.addEventListener("click", 
+function() {
+    let chooseFilter = button.textContent
+    workouts.filter((workout) => workout.includes(chooseFilter).forEach(element => {
+        
+    }))
+}
+
+));
+// comment out old code and make into one
+
 
 function filteredDumbbells(){
     const dumbbellWorkouts = workouts

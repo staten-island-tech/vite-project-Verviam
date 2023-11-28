@@ -115,4 +115,3 @@ const workouts = [
 
 export { workouts };
 
-// rerank difficulty of workouts and get difficult ones
