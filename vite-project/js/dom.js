@@ -7,7 +7,7 @@ const DOMSelectors = {
     moderateDifficulty: document.getElementById("moderate-difficulty"),
     cards: document.querySelector(".cards"),
     themeButton: document.querySelector(".theme-button"),
-    equipmentButtons: document.querySelector(".equipment-button"),
-    difficultyButtons: document.querySelector(".difficulty-button")
+    equipmentButtons: document.querySelectorAll(".equipment-button"),
+    difficultyButtons: document.querySelectorAll(".difficulty-button")
 }
 export {DOMSelectors}
