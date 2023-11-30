@@ -31,10 +31,12 @@ DOMSelectors.themeButton.addEventListener("click", function () {
   }
 });
 
+// fix to lower case for button text content
+
 let equipmentButtons = DOMSelectors.equipmentButtons;
 equipmentButtons.forEach((button) => {
   button.addEventListener("click", function () {
-    let chooseFilter = button.textContent;
+    let chooseFilter = button.textContent.toLowerCase();
 
     const filteredEquipment = workouts
       .filter((workout) => workout.equipment.includes(chooseFilter))
@@ -62,161 +64,181 @@ equipmentButtons.forEach((button) => {
 });
 
 let difficultyButtons = DOMSelectors.difficultyButtons;
-difficultyButtons.forEach((button) =>
+difficultyButtons.forEach((button) => {
   button.addEventListener("click", function () {
-    let chooseFilter = button.textContent;
-    workouts.filter((workout) =>
-      workout.includes(chooseFilter).forEach((element) => {})
-    );
-  })
-);
-// comment out old code and make into one
+    let chooseFilter = button.textContent.toLowerCase();
 
-function filteredDumbbells() {
-  const dumbbellWorkouts = workouts
-    .filter((workout) => workout.equipment.includes("dumbbell"))
-    .map((workout) => ({
-      //maps into new array
-      name: workout.name,
-      image: workout.image,
-      difficulty: workout.difficulty,
-      equipment: workout.equipment,
-      muscleGroup: workout.muscleGroup,
-    }));
+    const filteredDifficulty = workouts
+      .filter((workout) => workout.difficulty.includes(chooseFilter))
+      .map((workout) => ({
+        name: workout.name,
+        image: workout.image,
+        difficulty: workout.difficulty,
+        equipment: workout.equipment,
+        muscleGroup: workout.muscleGroup,
+      }));
 
-  dumbbellWorkouts.forEach((workout) =>
-    DOMSelectors.cards.insertAdjacentHTML(
-      "beforeend",
-      `<div class="card" data-aos="fade-right">
-    <div class="card-head" data-aos="flip-up">${workout.name}</div>
-    <img src = ${workout.image} class = "card-img"/>
-    <div class="card-p" data-aos="flip-up">Difficulty: ${workout.difficulty} <br> Equipment: ${workout.equipment} <br> Muscle Groups Worked: ${workout.muscleGroup}</div>
-    </div>`
-    )
-  );
-}
-
-function filteredBodyweight() {
-  const bodyweightWorkouts = workouts
-    .filter((workout) => workout.equipment.includes("bodyweight"))
-    .map((workout) => ({
-      name: workout.name,
-      image: workout.image,
-      difficulty: workout.difficulty,
-      equipment: workout.equipment,
-      muscleGroup: workout.muscleGroup,
-    }));
-
-  bodyweightWorkouts.forEach((workout) =>
-    DOMSelectors.cards.insertAdjacentHTML(
-      "beforeend",
-      `<div class="card" data-aos="fade-right">
-    <div class="card-head" data-aos="flip-up">${workout.name}</div>
-    <img src = ${workout.image} class = "card-img"/>
-    <div class="card-p" data-aos="flip-up">Difficulty: ${workout.difficulty} <br> Equipment: ${workout.equipment} <br> Muscle Groups Worked: ${workout.muscleGroup}</div>
-    </div>`
-    )
-  );
-}
-
-function filteredEasy() {
-  const easyWorkouts = workouts
-    .filter((workout) => workout.difficulty.includes("easy"))
-    .map((workout) => ({
-      name: workout.name,
-      image: workout.image,
-      difficulty: workout.difficulty,
-      equipment: workout.equipment,
-      muscleGroup: workout.muscleGroup,
-    }));
-
-  easyWorkouts.forEach((workout) =>
-    DOMSelectors.cards.insertAdjacentHTML(
-      "beforeend",
-      `<div class="card" data-aos="fade-right">
-    <div class="card-head" data-aos="flip-up">${workout.name}</div>
-    <img src = ${workout.image} class = "card-img"/>
-    <div class="card-p" data-aos="flip-up">Difficulty: ${workout.difficulty} <br> Equipment: ${workout.equipment} <br> Muscle Groups Worked: ${workout.muscleGroup}</div>
-    </div>`
-    )
-  );
-}
-
-function filteredHard() {
-  const hardWorkouts = workouts
-    .filter((workout) => workout.difficulty.includes("hard"))
-    .map((workout) => ({
-      name: workout.name,
-      image: workout.image,
-      difficulty: workout.difficulty,
-      equipment: workout.equipment,
-      muscleGroup: workout.muscleGroup,
-    }));
-
-  hardWorkouts.forEach((workout) =>
-    DOMSelectors.cards.insertAdjacentHTML(
-      "beforeend",
-      `<div class="card" data-aos="fade-right">
-    <div class="card-head" data-aos="flip-up">${workout.name}</div>
-    <img src = ${workout.image} class = "card-img"/>
-    <div class="card-p" data-aos="flip-up">Difficulty: ${workout.difficulty} <br> Equipment: ${workout.equipment} <br> Muscle Groups Worked: ${workout.muscleGroup}</div>
-    </div>`
-    )
-  );
-}
-
-function filteredModerate() {
-  const moderateWorkouts = workouts
-    .filter((workout) => workout.difficulty.includes("moderate"))
-    .map((workout) => ({
-      name: workout.name,
-      image: workout.image,
-      difficulty: workout.difficulty,
-      equipment: workout.equipment,
-      muscleGroup: workout.muscleGroup,
-    }));
-
-  moderateWorkouts.forEach((workout) =>
-    DOMSelectors.cards.insertAdjacentHTML(
-      "beforeend",
-      `<div class="card" data-aos="fade-right">
-    <div class="card-head" data-aos="flip-up">${workout.name}</div>
-    <img src = ${workout.image} class = "card-img"/>
-    <div class="card-p" data-aos="flip-up">Difficulty: ${workout.difficulty} <br> Equipment: ${workout.equipment} <br> Muscle Groups Worked: ${workout.muscleGroup}</div>
-    </div>`
-    )
-  );
-}
-
-DOMSelectors.everything.addEventListener("click", function () {
-  DOMSelectors.cards.innerHTML = "";
-  createCards();
+    filteredDifficulty.forEach((workouts) => {
+      workouts.forEach((workout) =>
+        DOMSelectors.cards.insertAdjacentHTML(
+          "beforeend",
+          `<div class="card" data-aos="fade-right">
+        <div class="card-head" data-aos="flip-up">${workout.name}</div>
+        <img src = ${workout.image} class = "card-img"/>
+        <div class="card-p" data-aos="flip-up">Difficulty: ${workout.difficulty} <br> Equipment: ${workout.equipment} <br> Muscle Groups Worked: ${workout.muscleGroup}</div>
+        </div>`
+        )
+      );
+    });
+  });
 });
 
-DOMSelectors.dumbbells.addEventListener("click", function () {
-  DOMSelectors.cards.innerHTML = "";
-  filteredDumbbells();
-});
+// // old code
+// function filteredDumbbells() {
+//   const dumbbellWorkouts = workouts
+//     .filter((workout) => workout.equipment.includes("dumbbell"))
+//     .map((workout) => ({
+//       //maps into new array
+//       name: workout.name,
+//       image: workout.image,
+//       difficulty: workout.difficulty,
+//       equipment: workout.equipment,
+//       muscleGroup: workout.muscleGroup,
+//     }));
 
-DOMSelectors.bodyweight.addEventListener("click", function () {
-  DOMSelectors.cards.innerHTML = "";
-  filteredBodyweight();
-});
+//   dumbbellWorkouts.forEach((workout) =>
+//     DOMSelectors.cards.insertAdjacentHTML(
+//       "beforeend",
+//       `<div class="card" data-aos="fade-right">
+//     <div class="card-head" data-aos="flip-up">${workout.name}</div>
+//     <img src = ${workout.image} class = "card-img"/>
+//     <div class="card-p" data-aos="flip-up">Difficulty: ${workout.difficulty} <br> Equipment: ${workout.equipment} <br> Muscle Groups Worked: ${workout.muscleGroup}</div>
+//     </div>`
+//     )
+//   );
+// }
 
-DOMSelectors.easyDifficulty.addEventListener("click", function () {
-  DOMSelectors.cards.innerHTML = "";
-  filteredEasy();
-});
+// function filteredBodyweight() {
+//   const bodyweightWorkouts = workouts
+//     .filter((workout) => workout.equipment.includes("bodyweight"))
+//     .map((workout) => ({
+//       name: workout.name,
+//       image: workout.image,
+//       difficulty: workout.difficulty,
+//       equipment: workout.equipment,
+//       muscleGroup: workout.muscleGroup,
+//     }));
 
-DOMSelectors.moderateDifficulty.addEventListener("click", function () {
-  DOMSelectors.cards.innerHTML = "";
-  filteredModerate();
-});
+//   bodyweightWorkouts.forEach((workout) =>
+//     DOMSelectors.cards.insertAdjacentHTML(
+//       "beforeend",
+//       `<div class="card" data-aos="fade-right">
+//     <div class="card-head" data-aos="flip-up">${workout.name}</div>
+//     <img src = ${workout.image} class = "card-img"/>
+//     <div class="card-p" data-aos="flip-up">Difficulty: ${workout.difficulty} <br> Equipment: ${workout.equipment} <br> Muscle Groups Worked: ${workout.muscleGroup}</div>
+//     </div>`
+//     )
+//   );
+// }
 
-DOMSelectors.hardDifficulty.addEventListener("click", function () {
-  DOMSelectors.cards.innerHTML = "";
-  filteredHard();
-});
+// function filteredEasy() {
+//   const easyWorkouts = workouts
+//     .filter((workout) => workout.difficulty.includes("easy"))
+//     .map((workout) => ({
+//       name: workout.name,
+//       image: workout.image,
+//       difficulty: workout.difficulty,
+//       equipment: workout.equipment,
+//       muscleGroup: workout.muscleGroup,
+//     }));
+
+//   easyWorkouts.forEach((workout) =>
+//     DOMSelectors.cards.insertAdjacentHTML(
+//       "beforeend",
+//       `<div class="card" data-aos="fade-right">
+//     <div class="card-head" data-aos="flip-up">${workout.name}</div>
+//     <img src = ${workout.image} class = "card-img"/>
+//     <div class="card-p" data-aos="flip-up">Difficulty: ${workout.difficulty} <br> Equipment: ${workout.equipment} <br> Muscle Groups Worked: ${workout.muscleGroup}</div>
+//     </div>`
+//     )
+//   );
+// }
+
+// function filteredHard() {
+//   const hardWorkouts = workouts
+//     .filter((workout) => workout.difficulty.includes("hard"))
+//     .map((workout) => ({
+//       name: workout.name,
+//       image: workout.image,
+//       difficulty: workout.difficulty,
+//       equipment: workout.equipment,
+//       muscleGroup: workout.muscleGroup,
+//     }));
+
+//   hardWorkouts.forEach((workout) =>
+//     DOMSelectors.cards.insertAdjacentHTML(
+//       "beforeend",
+//       `<div class="card" data-aos="fade-right">
+//     <div class="card-head" data-aos="flip-up">${workout.name}</div>
+//     <img src = ${workout.image} class = "card-img"/>
+//     <div class="card-p" data-aos="flip-up">Difficulty: ${workout.difficulty} <br> Equipment: ${workout.equipment} <br> Muscle Groups Worked: ${workout.muscleGroup}</div>
+//     </div>`
+//     )
+//   );
+// }
+
+// function filteredModerate() {
+//   const moderateWorkouts = workouts
+//     .filter((workout) => workout.difficulty.includes("moderate"))
+//     .map((workout) => ({
+//       name: workout.name,
+//       image: workout.image,
+//       difficulty: workout.difficulty,
+//       equipment: workout.equipment,
+//       muscleGroup: workout.muscleGroup,
+//     }));
+
+//   moderateWorkouts.forEach((workout) =>
+//     DOMSelectors.cards.insertAdjacentHTML(
+//       "beforeend",
+//       `<div class="card" data-aos="fade-right">
+//     <div class="card-head" data-aos="flip-up">${workout.name}</div>
+//     <img src = ${workout.image} class = "card-img"/>
+//     <div class="card-p" data-aos="flip-up">Difficulty: ${workout.difficulty} <br> Equipment: ${workout.equipment} <br> Muscle Groups Worked: ${workout.muscleGroup}</div>
+//     </div>`
+//     )
+//   );
+// }
+
+// DOMSelectors.everything.addEventListener("click", function () {
+//   DOMSelectors.cards.innerHTML = "";
+//   createCards();
+// });
+
+// DOMSelectors.dumbbells.addEventListener("click", function () {
+//   DOMSelectors.cards.innerHTML = "";
+//   filteredDumbbells();
+// });
+
+// DOMSelectors.bodyweight.addEventListener("click", function () {
+//   DOMSelectors.cards.innerHTML = "";
+//   filteredBodyweight();
+// });
+
+// DOMSelectors.easyDifficulty.addEventListener("click", function () {
+//   DOMSelectors.cards.innerHTML = "";
+//   filteredEasy();
+// });
+
+// DOMSelectors.moderateDifficulty.addEventListener("click", function () {
+//   DOMSelectors.cards.innerHTML = "";
+//   filteredModerate();
+// });
+
+// DOMSelectors.hardDifficulty.addEventListener("click", function () {
+//   DOMSelectors.cards.innerHTML = "";
+//   filteredHard();
+// });
 
 // npm init vite@latest
 // npm i (install in project folder and cd to project folder) every new os
