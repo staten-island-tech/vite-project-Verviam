@@ -31,8 +31,6 @@ DOMSelectors.themeButton.addEventListener("click", function () {
   }
 });
 
-// fix to lower case for button text content
-
 let equipmentButtons = DOMSelectors.equipmentButtons;
 equipmentButtons.forEach((button) => {
   button.addEventListener("click", function () {
@@ -48,8 +46,7 @@ equipmentButtons.forEach((button) => {
         muscleGroup: workout.muscleGroup,
       }));
 
-    filteredEquipment.forEach((workouts) => {
-      workouts.forEach((workout) =>
+    filteredEquipment.forEach((workout) => {
         DOMSelectors.cards.insertAdjacentHTML(
           "beforeend",
           `<div class="card" data-aos="fade-right">
@@ -58,15 +55,14 @@ equipmentButtons.forEach((button) => {
         <div class="card-p" data-aos="flip-up">Difficulty: ${workout.difficulty} <br> Equipment: ${workout.equipment} <br> Muscle Groups Worked: ${workout.muscleGroup}</div>
         </div>`
         )
-      );
+        });
     });
   });
-});
 
 let difficultyButtons = DOMSelectors.difficultyButtons;
 difficultyButtons.forEach((button) => {
   button.addEventListener("click", function () {
-    let chooseFilter = button.textContent.toLowerCase();
+    let chooseFilter = button.innerText.toLowerCase();
 
     const filteredDifficulty = workouts
       .filter((workout) => workout.difficulty.includes(chooseFilter))
