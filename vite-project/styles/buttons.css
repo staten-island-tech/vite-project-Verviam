@@ -1,33 +1,49 @@
 .selection-buttons{
   display: flex;
-  flex-direction: space-between;
-  padding: 1em;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .theme-button{
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   display: flex;
-  justify-content: flex-start;
+  align-items: center;
   padding: 0.5em;
 }
 
-.workouts-button{
+.equipment-filter{
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.equipment-button{ 
+  font-size: 1.5rem;
+  font-weight: bold;
   display: flex;
   justify-content: center;
   padding: 0.5em;
-
+  align-items: center;
 }
 
 .difficulty-filter{
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.difficulty-button{
+  font-size: 1.5rem;
+  font-weight: bold;
   display: flex;
   justify-content: flex-end;
   padding: 0.5em;
-}
-
-.sort-button{
-  font-size: 2rem;
-  font-weight: bold;
+  align-items: center;
 }
 
 .button-label{
